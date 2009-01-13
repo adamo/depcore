@@ -1,0 +1,24 @@
+-page_title 'Depcore blog'
+- for post in @posts
+  .row
+    .oneCol
+      %h1=post.title
+    .oneCol.date
+      -#%em= post.published_at
+      %em= date post.created_at
+  .row
+    .oneCol
+      = post.base_text
+  .row.post_options
+    .twoCol.comments_count
+      = link_to "comments: #{post.comments.count}", resource(post) #"/blogpost/#{post.id}/#comments"
+    .twoCol.more_link
+      = link_to 'more &rarr;', url(:post, post)
+      -if auth?
+        = link_to 'Edit', url(:edit_post,  post)
+.row
+  .threeCol= link_to '&larr; previous page','/'
+  .threeCol.page_number== page 1
+  .threeCol.more_link= link_to 'next page &rarr;','/'
+-if auth?
+  = link_to 'New', url(:new_post)

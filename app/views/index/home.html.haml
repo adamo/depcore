@@ -1,0 +1,35 @@
+- page_title 'Welcome to depcore' #t(:welcome)
+.row
+  .oneCol
+    %h1 Welcome to depcore
+.row
+  .oneCol
+    %p
+      In many cases the product offered by a company isn't enough anymore.
+      To ensure the continued operation and development, the communication paths with the client should be broaden.
+    %p
+      TV and radio advertisement doesn't carry out its function as couple of years ago.
+      The best medium is the Internet. It's the best form of advertisement and a way to contact clients.
+      %br
+      A professional web page is a product catalog, a source of advertisement and information, and a form of contact.
+      %br
+      Before all it's a business card for the company, so don't hesitate and contact me and I'll make a professional business card for you.
+.row
+  .twoCol
+    %h6 Latest blog entries
+    %ul.latestBlog
+      %li
+        -#%em 11.23
+        -#= link_to 'develop a domain name into website','/'
+        comming soon so stay tuned
+  .twoCol.contact
+    %h6 Contact
+    %span e-mail:
+    adam (at) depcore (dot) com
+    -#= mail_to 'adam@depcore.com','adam@depcore.com',:encode=>:hex
+    %br
+    %span phone:
+    +48 783 342 094
+    %br
+    %span icq:
+    447-509-151

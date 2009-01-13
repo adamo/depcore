@@ -1,0 +1,11 @@
+- page_title 'Add a portfolio element'
+
+%h1 Add a new element to portfolio
+
+= error_messages @portfolio, :error_class=>:errors,:build_li=>'<tt>%s</tt>'
+
+= form_for(@portfolio, :action => url(:portfolios,@portfolio),:enctype=>'multipart/form-data' ) do
+  = partial 'form'
+  %fieldset.submit= submit "Update &rarr;"
+
+= link_to 'Back', url(:portfolios)

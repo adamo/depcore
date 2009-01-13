@@ -1,0 +1,4 @@
+= fieldset do 
+  %p= text_field :title,:label=>'Post title:'
+  %p= text_area :html_content,:style=>'width:500px;height:500px',:class=>'mce-editor'
+  %p= check_box :commentable, :label=>'commentable'

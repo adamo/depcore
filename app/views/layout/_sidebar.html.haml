@@ -1,0 +1,10 @@
+.sidebar
+  .logo
+    %h1 depcore
+  .menu
+    %ul
+      = menu_item( {:route=>'/',:name=>'home',:id=>'menu_home_link_id'})
+      = menu_item( {:route=>'/blogposts',:name=>'blog',:id=>'menu_blog_link_id'} )
+      = menu_item({:route=>'/portfolios',:name=>'portfolio',:id=>'menu_portfolio_link_id'})
+      = menu_item({:route => '/about',:name=>'about',:id=>'menu_about_link_id'})
+      = menu_item({:route=> '/contact',:name=>'contact',:id=>'menu_contact_link_id'})

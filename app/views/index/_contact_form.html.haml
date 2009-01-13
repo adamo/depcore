@@ -1,0 +1,6 @@
+%fieldset
+  %p= text_field :name,:label=> 'Your name:'
+  %p= text_field :email, :label => 'E-mail:'
+  %p= select :subject, :collection => ['web design price quote', 'web application price quote','both', 'general inquiry', 'collaboration'],:label=>'Subject:'
+%fieldset
+  %p= text_area :message, :label=>'Message:'

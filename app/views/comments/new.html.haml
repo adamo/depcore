@@ -1,0 +1,7 @@
+= error_messages_for @comment
+
+= form_for(@comment, :action => url(:comments) ) do
+  = partial :form
+  %fieldset.submit= submit "Create &rarr;"
+
+= link_to 'Back', url(:comments)

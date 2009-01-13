@@ -1,0 +1,54 @@
+-page_title @post.title
+.row
+  .oneCol
+    %h1= @post.title
+.row
+  .oneCol
+    = @post.html_content
+
+-if @post.commentable
+  .row.oneCol#comments
+    %h5  Comments
+  .row
+    - if @post.comments.count==0
+      .oneCol
+        %p
+          No comments yet, you can be the first one to comment one the subject, 
+          to do that use the form below.
+    - else
+      - @post.comments(:order=>[:created_at.asc]).each do |comment|
+        - if comment.admin
+          .oneCol.comment.admin= textile comment.text_textile
+        - else 
+          .oneCol.comment.alt= textile comment.text_textile
+        .oneCol.comment.author
+          -if comment.admin# gravatar_tag comment.email
+            = image_tag 'admin-avatar.png',:alt=>'depcore'
+          - else
+            = gravatar comment.email
+          %span
+            = comment_author comment.author,comment.url
+            %em= date comment.created_at
+  .row
+    .oneCol
+      %h6 Comment on the subject
+  .row
+    .oneCol= message_display
+  .row
+    .oneCol
+      %p 
+        The email address and name is required but the email will not be published.
+        You can use 
+        = link_to 'textile','http://www.textism.com/tools/textile/'
+        markup. Also 
+        = link_to 'gravatars', 'http://gravatar.org'
+        are used if they exist.
+  .row
+    .oneCol
+      = error_messages_for @comment
+      = form_for( @comment, :action => resource(@post,:comments) ) do
+        = partial 'comments/form'
+        %fieldset.submit= submit 'send &rarr;'
+- if auth?
+  = link_to 'Edit', url(:edit_post,  @post)
+  = link_to 'Back', url(:posts)

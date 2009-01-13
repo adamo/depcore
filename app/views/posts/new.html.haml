@@ -1,0 +1,11 @@
+- include_wysywig
+- page_title 'Creating new post tag'
+
+%h1 Creating a new post
+= error_messages_for @post
+
+= form_for(@post, :action => url(:posts) ) do
+  = partial :form
+  %fieldset.submit= submit "Create &rarr;"
+
+= link_to 'Back', url(:posts),:rel=>:nav

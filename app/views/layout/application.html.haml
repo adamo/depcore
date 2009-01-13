@@ -1,0 +1,28 @@
+!!! Strict
+%html{ html_attrs("en_us") }
+  %head
+    %title= catch_content( :title ) || 'depcore personal site of Adam Anlauf, webdesign, design, development, ruby, ruby on rails, merb, datamapper,activerecord,haml,javascript, '
+    %meta{ :content => "text/html; charset=utf-8", "http-equiv" => "content-type" }
+    = css_include_tag :screen
+    /[if lt IE7]
+      = css_include_tag :ie_fix
+    = catch_content :jquery
+    = catch_content :tiny_mce
+    = catch_content :tiny_mce_init
+  %body
+    = partial 'layout/sidebar'
+    .container
+      = catch_content :for_layout
+      .oneCol.footer
+        &copy; copyright
+        %b depcore.com
+        2008 all rights reserved
+        /[if IE]
+          - link_to 'browsehappy.com','browsehappy.com'
+    %script{:type=>'text/javascript'}
+      var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+      document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    %script{:type=>'text/javascript'}
+      var pageTracker = _gat._getTracker("UA-3732358-7");
+      pageTracker._initData();
+      pageTracker._trackPageview();

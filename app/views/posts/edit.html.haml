@@ -1,0 +1,14 @@
+- include_wysywig
+- page_title 'editing new post tag'
+
+%h1
+  Posts controller, edit action
+%p
+= error_messages_for @post
+
+= form_for(@post, :action => url(:post, @post)) do
+  = partial :form
+  %fieldset.submit= submit "Update &rarr;"
+
+= link_to 'Show', url(:post, @post)
+= link_to 'Back', url(:posts)

@@ -1,0 +1,29 @@
+- page_title 'My selected work'
+.oneCol
+  %h1 My portfolio
+.row
+  .oneCol
+    %p 
+      Here's some selected work, that I've done in the past time.
+
+- for portfolio in @portfolios
+  .row
+    .twoCol
+      -if portfolio.name
+        %h7= portfolio.name
+    .twoCol{:style=>'text-align:center'}
+      - if portfolio.web_url
+        %p= link_to 'visit page &rarr;', 'http://'+portfolio.web_url,:target=>'_blank'
+  - if portfolio.has_attached_file?
+    .row
+      .oneCol.image
+        %img{:src=>"/#{portfolio.attachment_path}",:height=>200,:width=>540}
+    .row
+      .oneCol
+        -if portfolio.description
+          %p= portfolio.description
+-if authenticated?
+  .nav
+    = link_to 'Show', url(:portfolio, portfolio)
+    = link_to 'Edit', url(:edit_portfolio,  portfolio)
+    = link_to 'New', url(:new_portfolio)

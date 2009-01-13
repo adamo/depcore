@@ -1,0 +1,32 @@
+- page_title 'get in touch with me'
+.oneCol
+  %h1
+    Get in touch with me
+.row
+  .oneCol
+    %p
+      If you want to get in touch with me about webdesign/development
+      or just random stuff. Use the form located below and I'll be happy to answer every 
+      mail that comes to me as soon as possible.
+      %br
+      If you really need a fast response or need something urgent call me on my
+      phone +48 783 342 094 - it's allways with me so most of the time I can ansewer it.
+.row
+  .oneCol
+    %h6 Contact form
+.row
+  .oneCol= message_display
+.row
+  .twoCol
+    %p
+      Please fill out every field in the form and then press the send button
+      = error_messages @contact
+  .twoCol
+    = form_for  @contact, :action=>'send_question',:method=>'post',:class=>'contactForm' do
+      %fieldset
+        %p= text_field :name,:label=> 'Your name:'
+        %p= text_field :email, :label => 'E-mail:'
+        %p= select :subject, :collection => ['web design price quote', 'web application price quote','both', 'general inquiry', 'collaboration'],:label=>'Subject:'
+      %fieldset
+        %p= text_area :message, :label=>'Message:',:cols=>500,:rows=>500
+      %fieldset.submit= submit 'send &rarr;'
