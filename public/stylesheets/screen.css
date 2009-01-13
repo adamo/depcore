@@ -1,0 +1,84 @@
+*{ margin:0;border:0;padding:0;}
+body{background:#fff;}
+/* grids */
+.twoCol, .oneCol, .fourCol,.threeCol,.fifeCol{ margin-right:17px; float:left;}
+.oneCol{ width:543px; }
+.twoCol{ width:263px;}
+.threeCol{ width:170px; }
+.fourCol{ width: 123px; }
+.fifeCol{ width:95px; }
+.row{ clear:left; }
+/*  SIDEBAR   */
+.sidebar {display: block; width:349px; height:100%; background:#1e2c3a;  border-right:1px solid #656f78; position:fixed; top:0; left:0;}
+.sidebar .logo{ background:url(../images/glow.png) no-repeat 0 0; height:293px; width:349px;}
+.sidebar .logo h1{ position:relative;  top:40px;  left:76px; text-indent:-9999px; background:url(../images/logo.png) no-repeat 0 0; height:150px;  width:196px;}
+.sidebar .menu{ position:relative; top:-60px; left:168px; height:100%;}
+.sidebar .menu li{list-style:none;  display:block; height:16px; padding-left:30px; width:100px;  margin-bottom:5px;}
+.sidebar .menu li:hover, .sidebar .menu li.current{background:url(../images/star.png) no-repeat left center;}
+.sidebar .menu a { display:block; background-position:left center; background-repeat:no-repeat;  text-indent:-999px;}
+.sidebar .menu a#menu_home_link_id{
+  background-image:url(../images/home.png);}
+.sidebar .menu a#menu_blog_link_id{
+  background-image:url(../images/blog.png);}
+.sidebar .menu a#menu_portfolio_link_id{
+  background-image:url(../images/portfolio.png);}
+.sidebar .menu a#menu_about_link_id{
+  background-image:url(../images/about.png);}
+.sidebar .menu a#menu_contact_link_id{
+  background-image:url(../images/contact.png);}
+/*  CONATINER  */
+.container{ position:absolute; top:140px; margin-left:450px; color:#1e2c3a; width:570px;  min-height:70%;}
+.container h1,.container h2, .container h3, .container h4, .container h5,
+.container h6{ font: small-caps 30pt/90% Geneva; margin-bottom:15px; color:#1e2c3a; letter-spacing:1px; margin-top:35px;}
+.container h1{ margin-bottom:35px;text-align:center;letter-spacing:3px; margin-top:0;}
+.container h1:first-letter,.container h2:first-letter,
+.container h3:first-letter, .container h4:first-letter,
+.container h5:first-letter,.container h6:first-letter{text-transform:uppercase;}
+.container h2{font-size:30pt;}
+.container h3{font-size:25pt;}
+.container h4{font-size:20pt;}
+.container h5{font-size:16pt;}
+.container h6{font-size:14pt;}
+.container p, .container a{ font:8pt/150% Verdana,Arial; color:#656f78; letter-spacing:1px;} /**/
+.container p{ margin-left:5px;margin-bottom:10px;}
+.container p:first-line{font-variant:small-caps;font-size:9pt;}
+.container a{text-decoration:underline;color:#000;}
+.container a:hover{text-decoration:none}
+.container img{ padding:10px 0; border:1px solid #1e2c3a;}
+.container ul.latestBlog{  list-style:none; position:relative;}
+.container ul.latestBlog li{ border-bottom:1px dotted #1e2c3a; height:25px; padding-top:5px;position:relative; overflow:hidden;}
+.container ul.latestBlog em{font:italic 6pt Verdana; position:relative;right:0;
+  color:#acae42; top:-10px;}
+.container ul.latestBlog li:first-child{ border-top:1px dotted #1e2c3a;}
+.container .contact em{display:block;}
+.container .contact span{ font-variant:small-caps;}
+.container img{border:0; float:right;margin:5px 10px;}
+.container code{background:#fcfefe; border:2px solid #ccc;border-left:0;border-right:0; padding:0 20px;display:block;}
+.footer{ margin:20px 5px;margin-top:35px; text-align:right; font:7pt Verdana; border-top:1px dotted #656f78; padding-top:5px;}
+.footer li{display:inline}
+/* forms */
+form p {margin-bottom:5px;}
+form p label{float:left;text-align:right;margin-right:10px;width:35%;}
+form p input,form p select, form p textarea{border-bottom:1px dashed #656f78; width:50%; font:8pt monospace;color:#656f78;}
+form p input[type=checkbox]{max-width:20px;border:none;}
+form p textarea{height:60px;}
+fieldset.submit {text-align:right; padding-right:30px;}
+fieldset.submit input{  padding:2px 5px; border:0;background:#fff;}
+.error,.notice,.info{color:#f00; font:10pt Courier,monospace;text-align:center;   margin-bottom:15px;}
+.errors{margin:10px;}
+.errors h2{font-size:12pt;}
+.errors tt{color:red;display:block;padding-left:25px;}
+.notice, .info {color:#00f;}
+.link {text-align:center;}
+.more_link{text-align:right; margin-bottom:25px;}
+.post_options{padding-top:20px;}
+.comments_count{font:itallic 12pt Verdana;}
+.date,.date em{font:itallic 12pt Verdana;color:#acae42; text-align:center;margin-top:-25px;margin-bottom:25px;}
+.page_number{font:itallic 10pt "Bookman Old Style"; text-align:center;}
+.comment{border-bottom:2px solid #f2f3de;}
+.alt{background-color:#fcfcf1;}
+.admin{background:#fff url(../images/admin-bg.png) no-repeat bottom right;}
+.author{background-image:url(../images/comment-author.png);font: itallic 10pt Tahoma;border:none; margin-bottom:20px;text-align:right;}
+.author span{float:right}
+.author img{width:60px;height:60px;float:right; margin-left:20px;padding:1px;border:1px dotted #656f78;}
+.author em{display:block; font: 7pt Geneva;}
